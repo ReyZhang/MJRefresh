@@ -38,7 +38,7 @@
 + (NSString *)mj_localizedStringForKey:(NSString *)key value:(NSString *)value
 {
     static NSBundle *bundle = nil;
-    if (bundle == nil) {
+//    if (bundle == nil) {
         NSString *language = MJRefreshConfig.defaultConfig.languageCode;
         // 如果配置中没有配置语言
         if (!language) {
@@ -66,7 +66,7 @@
         
         // 从MJRefresh.bundle中查找资源
         bundle = [NSBundle bundleWithPath:[[NSBundle mj_refreshBundle] pathForResource:language ofType:@"lproj"]];
-    }
+//    }
     value = [bundle localizedStringForKey:key value:value table:nil];
     return [[NSBundle mainBundle] localizedStringForKey:key value:value table:nil];
 }
